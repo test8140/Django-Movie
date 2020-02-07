@@ -53,7 +53,7 @@ class Movie(models.Model):
     description = models.TextField('Description')
     poster = models.ImageField('Poster', upload_to='movies/')
     year = models.PositiveSmallIntegerField('Release date', default=2019)
-    county = models.CharField('Country', max_length=30)
+    country = models.CharField('Country', max_length=30)
     directors = models.ManyToManyField(Actor, verbose_name='directors', related_name='film_directors')
     actors = models.ManyToManyField(Actor, verbose_name='actors', related_name='film_actor')
     genres = models.ManyToManyField(Genre, verbose_name='genres')
@@ -61,7 +61,7 @@ class Movie(models.Model):
     budget = models.PositiveIntegerField('Budget', default=0, help_text='indicate the amount in dollars')
     fees_in_usa = models.PositiveIntegerField('USA fees', default=0, help_text='indicate the amount in dollars')
     fees_in_world = models.PositiveIntegerField('WORLD fees', default=0, help_text='indicate the amount in dollars')
-    cateory = models.ForeignKey(Category, verbose_name='Category', on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, verbose_name='Category', on_delete=models.SET_NULL, null=True)
     url = models.SlugField(max_length=160, unique=True)
     draft = models.BooleanField('Draft', default=False)
 
