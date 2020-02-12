@@ -24,6 +24,10 @@ class Actor(models.Model):
 
     def __str__(self):
         return self.name
+    
+    
+    def get_absolute_url(self):
+        return reverse('actor_detail', kwargs={'slug': self.name})
 
     
     class Meta:
@@ -54,7 +58,7 @@ class Movie(models.Model):
     poster = models.ImageField('Poster', upload_to='movies/')
     year = models.PositiveSmallIntegerField('Release date', default=2019)
     country = models.CharField('Country', max_length=30)
-    directors = models.ManyToManyField(Actor, verbose_name='directors', related_name='film_directors')
+    directors = models.ManyToManyField(Actor, verbose_name='directors', related_name='film_director')
     actors = models.ManyToManyField(Actor, verbose_name='actors', related_name='film_actor')
     genres = models.ManyToManyField(Genre, verbose_name='genres')
     world_premiere = models.DateField('World premiere', default=date.today)
