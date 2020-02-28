@@ -11,7 +11,7 @@ function ajaxSend(url, params) {
           .catch(error => console.error(error))
 }
 
-const forms = document.querySelector( selectors: 'form[name=filter]');
+/*--const forms = document.querySelector( selectors: 'form[name=filter]');
 
 
 
@@ -20,7 +20,7 @@ forms.addEventListener( type: 'submit', listener: function (e :Event) {
     let url = this.action;
     let params = new URLSearchParams(new FormData(this)).toString();
     ajaxSend(url, params);
-});
+});--*/
 
 
 function render(data) {
@@ -72,4 +72,4 @@ rating.addEventListener(type: "change", listener: function(e :Event) {
     }) Promise<Response>
             .then(response => alert("Рейтинг установлен")) Promise<void>
             .catch(error => alert("Ошибка"))
-})
+}) 

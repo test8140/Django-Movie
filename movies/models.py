@@ -117,7 +117,7 @@ class RatingStar(models.Model):
         verbose_name_plural = 'Rating stars'
         ordering = ['-value']
 
-
+ 
 
 
 class Rating(models.Model):
